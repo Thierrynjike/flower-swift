@@ -28,6 +28,7 @@ let package = Package(
         .target(
             name: "flwr",
             dependencies: [
+                "flwr",
                 .product(name: "GRPC", package: "grpc-swift"),
                 .product(name: "NumPy-iOS", package: "NumPy-iOS"),
                 .product(name: "PythonKit", package: "PythonKit")],
