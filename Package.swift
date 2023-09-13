@@ -21,6 +21,7 @@ let package = Package(
         .package(url: "https://github.com/kewlbear/NumPy-iOS.git", branch: "main"),
         .package(url: "https://github.com/grpc/grpc-swift.git", from: "1.0.0"),
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.1.0"),
+        .package(url: "https://github.com/adap/flower-swift", branch: "main"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -28,7 +29,7 @@ let package = Package(
         .target(
             name: "flwr",
             dependencies: [
-                "flower-swift",
+                .product(name: "flower", package: "flower-swift"),
                 .product(name: "GRPC", package: "grpc-swift"),
                 .product(name: "NumPy-iOS", package: "NumPy-iOS"),
                 .product(name: "PythonKit", package: "PythonKit")],
